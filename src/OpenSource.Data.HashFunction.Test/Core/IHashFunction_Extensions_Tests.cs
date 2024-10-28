@@ -296,7 +296,7 @@ namespace OpenSource.Data.HashFunction.Test
                     BitConverter.GetBytes(value));
             }
 
-#if !NETCOREAPP1_1
+#if !NET6_0_OR_GREATER
 
             [Fact]
             public void IHashFunction_Extensions_ComputeHash_WithDesiredBits_TModel()
