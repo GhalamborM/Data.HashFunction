@@ -114,7 +114,7 @@ public class Program
 
 Release Notes
 -------------
-See [Release Notes](https://github.com/brandondahler/Data.HashFunction/wiki/Release-Notes) wiki page.
+See [Release Notes](https://github.com/Deskasoft/Data.HashFunction/wiki/Release-Notes) wiki page.
 
 
 Contributing
@@ -131,4 +131,4 @@ Code contributions should follow existing code's methodologies and style, along 
 License
 -------
 
-Data.HashFunction is released under the terms of the MIT license. See [LICENSE](https://github.com/brandondahler/Data.HashFunction/blob/master/LICENSE) for more information or see http://opensource.org/licenses/MIT.
+Data.HashFunction is released under the terms of the MIT license. See [LICENSE](https://github.com/deskasoft/Data.HashFunction/blob/master/LICENSE) for more information or see http://opensource.org/licenses/MIT.
