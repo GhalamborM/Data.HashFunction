@@ -115,6 +115,24 @@ Release Notes
 -------------
 See [Release Notes](https://github.com/Deskasoft/Data.HashFunction/wiki/Release-Notes) wiki page.
 
+## Versioning Guarantees
+
+This library generally abides by [Semantic Versioning](https://semver.org). Packages are published in `MAJOR.MINOR.PATCH` version format.
+
+### Patch component
+
+An increment of the **PATCH** component always indicates that an internal-only change was made, generally a bug fix. These changes will not affect the public-facing API in any way, and are always guaranteed to be forward/backwards-compatible with your codebase, any pre-compiled dependencies of your codebase.
+
+### Minor component
+
+An increment of the **MINOR** component indicates that some addition was made to the library,
+and this addition **may not be** backwards-compatible with prior versions.
+
+### Major component
+
+An increment of the **MAJOR** component indicates that breaking changes have been made to the library;
+**consumers should check the release notes to determine what changes need to be made.**
+
 
 Contributing
 ------------
