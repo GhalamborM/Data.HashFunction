@@ -17,7 +17,6 @@ Status
 ### Master
 
 [![Build Status](https://img.shields.io/appveyor/ci/brandondahler/data-hashfunction/master.svg)](https://ci.appveyor.com/project/brandondahler/data-hashfunction)
-[![Test Status](https://img.shields.io/appveyor/tests/brandondahler/data-hashfunction/master.svg)](https://ci.appveyor.com/project/brandondahler/data-hashfunction/build/tests)
 
 
 ### NuGet
