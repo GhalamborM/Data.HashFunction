@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/e97b338c-bd33-4693-b143-773542ae66ca">
+
 Data.HashFunction ![License](https://img.shields.io/github/license/brandondahler/Data.HashFunction.svg)
 =================
 
