@@ -4,7 +4,7 @@
     <Description>C# library to create a common interface to non-cryptographic hash functions (http://en.wikipedia.org/wiki/List_of_hash_functions#Non-cryptographic_hash_functions) and provide implementations of public hash functions.  Includes wrapper for HashAlgorithm-based hash functions.</Description>
     <Copyright>Copyright 2024</Copyright>
     <AssemblyTitle>Data.HashFunction.Core</AssemblyTitle>
-    <VersionPrefix>3.0.0</VersionPrefix>
+    <VersionPrefix>3.0.1</VersionPrefix>
     <Authors>Data.HashFunction Developers</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
