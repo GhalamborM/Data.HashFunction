@@ -1,7 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29215.179
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{D0A9A68F-2401-42E4-A6E7-D9FF9F080197}"
 	ProjectSection(SolutionItems) = preProject
@@ -58,9 +58,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSource.Data.HashFunctio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSource.Data.HashFunction.HashAlgorithm", "OpenSource.Data.HashFunction.HashAlgorithm\OpenSource.Data.HashFunction.HashAlgorithm.csproj", "{89C43129-57DC-445C-9521-5C7A6011A878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSource.Data.HashFunction.FarmHash", "OpenSource.Data.HashFunction.FarmHash\OpenSource.Data.HashFunction.FarmHash.csproj", "{62D94F50-2DDD-4F81-B4AF-9D1A53C1404C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSource.Data.HashFunction.FarmHash", "OpenSource.Data.HashFunction.FarmHash\OpenSource.Data.HashFunction.FarmHash.csproj", "{62D94F50-2DDD-4F81-B4AF-9D1A53C1404C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSource.Data.HashFunction.MetroHash", "OpenSource.Data.HashFunction.MetroHash\OpenSource.Data.HashFunction.MetroHash.csproj", "{F65860E9-DF4C-44F4-9AF0-3E8B2BC682FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSource.Data.HashFunction.MetroHash", "OpenSource.Data.HashFunction.MetroHash\OpenSource.Data.HashFunction.MetroHash.csproj", "{F65860E9-DF4C-44F4-9AF0-3E8B2BC682FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSource.Data.HashFunction.Blake3", "OpenSource.Data.HashFunction.Blake3\OpenSource.Data.HashFunction.Blake3.csproj", "{5BB547A9-3284-4071-8566-0DB842EC4240}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +141,10 @@ Global
 		{F65860E9-DF4C-44F4-9AF0-3E8B2BC682FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F65860E9-DF4C-44F4-9AF0-3E8B2BC682FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F65860E9-DF4C-44F4-9AF0-3E8B2BC682FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB547A9-3284-4071-8566-0DB842EC4240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB547A9-3284-4071-8566-0DB842EC4240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB547A9-3284-4071-8566-0DB842EC4240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB547A9-3284-4071-8566-0DB842EC4240}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
