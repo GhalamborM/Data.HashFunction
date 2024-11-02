@@ -35,6 +35,7 @@
   <ItemGroup>
     <ProjectReference Include="..\OpenSource.Data.HashFunction.BernsteinHash\OpenSource.Data.HashFunction.BernsteinHash.csproj" />
     <ProjectReference Include="..\OpenSource.Data.HashFunction.Blake2\OpenSource.Data.HashFunction.Blake2.csproj" />
+    <ProjectReference Include="..\OpenSource.Data.HashFunction.Blake3\OpenSource.Data.HashFunction.Blake3.csproj" />
     <ProjectReference Include="..\OpenSource.Data.HashFunction.BuzHash\OpenSource.Data.HashFunction.BuzHash.csproj" />
     <ProjectReference Include="..\OpenSource.Data.HashFunction.CityHash\OpenSource.Data.HashFunction.CityHash.csproj" />
     <ProjectReference Include="..\OpenSource.Data.HashFunction.Core\OpenSource.Data.HashFunction.Core.csproj" />
