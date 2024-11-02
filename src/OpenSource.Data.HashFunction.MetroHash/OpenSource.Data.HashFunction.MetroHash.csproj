@@ -4,7 +4,7 @@
     <Description>Data.HashFunction implementation of MetroHash (https://github.com/jandrewrogers/MetroHash).</Description>
     <Copyright>Copyright 2024</Copyright>
     <AssemblyTitle>Data.HashFunction.MetroHash</AssemblyTitle>
-    <VersionPrefix>3.0.0</VersionPrefix>
+    <VersionPrefix>3.0.1</VersionPrefix>
     <Authors>Data.HashFunction Developers</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
