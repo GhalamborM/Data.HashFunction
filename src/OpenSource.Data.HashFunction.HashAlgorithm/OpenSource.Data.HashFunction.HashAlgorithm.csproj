@@ -4,7 +4,7 @@
     <Description>Data.HashFunction implementation of a wrapper for System.Security.Cryptography.HashAlgorithm.</Description>
     <Copyright>Copyright 2024</Copyright>
     <AssemblyTitle>Data.HashFunction.HashAlgorithm</AssemblyTitle>
-    <VersionPrefix>3.0.0</VersionPrefix>
+    <VersionPrefix>3.0.1</VersionPrefix>
     <Authors>Data.HashFunction Developers</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
