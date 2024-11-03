@@ -27,6 +27,7 @@ Status
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Data.HashFunction.BernsteinHash | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.BernsteinHash.svg)](https://www.nuget.org/packages/Data.HashFunction.BernsteinHash/) |
 | Data.HashFunction.Blake2        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Blake2.svg)](https://www.nuget.org/packages/Data.HashFunction.Blake2/)               |
+| Data.HashFunction.Blake3        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Blake3.svg)](https://www.nuget.org/packages/Data.HashFunction.Blake3/)               |
 | Data.HashFunction.Buzhash       | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Buzhash.svg)](https://www.nuget.org/packages/Data.HashFunction.Buzhash/)             |
 | Data.HashFunction.CityHash      | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.CityHash.svg)](https://www.nuget.org/packages/Data.HashFunction.CityHash/)           |
 | Data.HashFunction.CRC           | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.CRC.svg)](https://www.nuget.org/packages/Data.HashFunction.CRC/)                     |
@@ -50,7 +51,9 @@ The following hash functions have been implemented from the most reliable refere
   * BernsteinHash - Original
   * ModifiedBernsteinHash - Minor update that is said to result in better distribution
 * [Blake2](https://blake2.net/)
-  * Blake2b 
+  * Blake2b
+* [Blake3](https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3)
+  * Blake3 (through https://github.com/xoofx/Blake3.NET - does not require the mentioned project)
 * [BuzHash](http://www.serve.net/buz/hash.adt/java.002.html)
   * BuzHashBase - Abstract implementation, there is no authoritative implementation
   * DefaultBuzHash - Concrete implementation, uses 256 random 64-bit integers
