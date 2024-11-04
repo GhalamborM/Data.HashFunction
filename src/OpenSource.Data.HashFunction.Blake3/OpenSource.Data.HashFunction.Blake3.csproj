@@ -42,7 +42,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="C:\Users\emirm\Documents\data_hashfunction_logo.png">
+    <None Include="..\..\data_hashfunction_logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
