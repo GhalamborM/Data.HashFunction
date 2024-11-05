@@ -4,7 +4,7 @@
     <Description>Data.HashFunction implementation of the cyclic redundancy check (CRC) error-detecting code (http://en.wikipedia.org/wiki/Cyclic_redundancy_check).  Implementation is generalized to encompass all possible CRC parameters from 1 to 64 bits.</Description>
     <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
     <AssemblyTitle>Data.HashFunction.CRC</AssemblyTitle>
-    <VersionPrefix>3.1.1</VersionPrefix>
+    <VersionPrefix>3.1.2</VersionPrefix>
     <Authors>Deskasoft International</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

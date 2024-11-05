@@ -4,7 +4,7 @@
     <Description>Data.HashFunction implementation of xxHash (https://code.google.com/p/xxhash/).</Description>
     <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
     <AssemblyTitle>Data.HashFunction.xxHash</AssemblyTitle>
-    <VersionPrefix>3.1.1</VersionPrefix>
+    <VersionPrefix>3.1.2</VersionPrefix>
     <Authors>Deskasoft International</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
