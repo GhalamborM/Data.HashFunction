@@ -43,6 +43,9 @@ Status
 | Data.HashFunction.SpookyHash    | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.SpookyHash.svg)](https://www.nuget.org/packages/Data.HashFunction.SpookyHash/)       |
 | Data.HashFunction.xxHash        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.xxHash.svg)](https://www.nuget.org/packages/Data.HashFunction.xxHash/)               |
 
+There is also a nuget package referencing all available hash functions, which you can find below. Use this to easily bind all hash functions to your project.
+| Data.HashFunction        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.svg)](https://www.nuget.org/packages/Data.HashFunction/)               |
+
 Implementations
 ---------------
 
