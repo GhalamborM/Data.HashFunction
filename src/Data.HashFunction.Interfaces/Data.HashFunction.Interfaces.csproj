@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>C# library to create a common interface to non-cryptographic hash functions (http://en.wikipedia.org/wiki/List_of_hash_functions#Non-cryptographic_hash_functions).</Description>
+    <Copyright>Copyright 2024</Copyright>
+    <AssemblyTitle>Data.HashFunction.Interfaces</AssemblyTitle>
+    <VersionPrefix>3.1.1</VersionPrefix>
+    <Authors>Data.HashFunction Developers</Authors>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Data.HashFunction.Interfaces</AssemblyName>
+    <AssemblyOriginatorKeyFile>../Data.HashFunction.Production.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>Data.HashFunction.Interfaces</PackageId>
+    <PackageTags>hash;function</PackageTags>
+    <PackageReleaseNotes>https://github.com/deskasoft/Data.HashFunction/wiki/Release-Notes</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/deskasoft/Data.HashFunction/</RepositoryUrl>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RootNamespace>Data.HashFunction</RootNamespace>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>$(SolutionDir)\packages\</PackageOutputPath>
+    <Product>$(AssemblyTitle)</Product>
+    <PackageIcon>data_hashfunction_logo.png</PackageIcon>
+    <PackageProjectUrl>https://deskasoft.dev/projects/data.hashfunction/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(VcsRevision)'!=''">
+    <PackageReleaseNotes>$(PackageReleaseNotes)
+
+vcs-revision: $(VcsRevision)
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\data_hashfunction_logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\FriendAssemblies.cs" Link="Properties\FriendAssemblies.cs" />
+    <Compile Include="..\SolutionInfo.cs" Link="Properties\SolutionInfo.cs" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+</Project>

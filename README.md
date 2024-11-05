@@ -28,7 +28,7 @@ Status
 | Data.HashFunction.BernsteinHash | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.BernsteinHash.svg)](https://www.nuget.org/packages/Data.HashFunction.BernsteinHash/) |
 | Data.HashFunction.Blake2        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Blake2.svg)](https://www.nuget.org/packages/Data.HashFunction.Blake2/)               |
 | Data.HashFunction.Blake3        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Blake3.svg)](https://www.nuget.org/packages/Data.HashFunction.Blake3/)               |
-| Data.HashFunction.Buzhash       | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Buzhash.svg)](https://www.nuget.org/packages/Data.HashFunction.Buzhash/)             |
+| Data.HashFunction.BuzHash       | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Buzhash.svg)](https://www.nuget.org/packages/Data.HashFunction.Buzhash/)             |
 | Data.HashFunction.CityHash      | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.CityHash.svg)](https://www.nuget.org/packages/Data.HashFunction.CityHash/)           |
 | Data.HashFunction.CRC           | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.CRC.svg)](https://www.nuget.org/packages/Data.HashFunction.CRC/)                     |
 | Data.HashFunction.ELF64         | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.ELF64.svg)](https://www.nuget.org/packages/Data.HashFunction.ELF64/)                 |
