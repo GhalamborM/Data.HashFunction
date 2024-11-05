@@ -160,10 +160,14 @@ namespace Data.HashFunction.Core.LibraryLoader
             {
                 return new WindowsNativeLibrary(library);
             }
-            else if (IsOSPlatform(PlatformType.Android) || IsOSPlatform(PlatformType.Linux) || IsOSPlatform(PlatformType.MacOS))
+            else if (IsOSPlatform(PlatformType.Android) || IsOSPlatform(PlatformType.Linux))
             {
-                return new UnixNativeLibrary(library);
+                return new LinuxNativeLibrary(library);
             }
+            else if (IsOSPlatform(PlatformType.MacOS))
+            {
+				return new OSXNativeLibrary(library);
+			}
             else
             {
                 throw new PlatformNotSupportedException("Cannot load native libraries on this platform: " + RuntimeInformation.OSDescription);
@@ -192,23 +196,23 @@ namespace Data.HashFunction.Core.LibraryLoader
             }
         }
 
-        private class UnixNativeLibrary : NativeLibraryLoader
+        private class LinuxNativeLibrary : NativeLibraryLoader
 		{
-            public UnixNativeLibrary(string library) : base(library)
+            public LinuxNativeLibrary(string library) : base(library)
             {
             }
 
             protected override IntPtr LoadLibrary(string libraryName)
             {
-                Libdl.dlerror();
-                IntPtr handle = Libdl.dlopen(libraryName, Libdl.RTLD_NOW);
+                Libdl.dlerror_linux();
+                IntPtr handle = Libdl.dlopen_linux(libraryName, Libdl.RTLD_NOW);
                 if (handle == IntPtr.Zero && !Path.IsPathRooted(libraryName))
                 {
                     string baseDir = AppContext.BaseDirectory;
                     if (!string.IsNullOrWhiteSpace(baseDir))
                     {
                         string localPath = Path.Combine(baseDir, libraryName);
-                        handle = Libdl.dlopen(localPath, Libdl.RTLD_NOW);
+                        handle = Libdl.dlopen_linux(localPath, Libdl.RTLD_NOW);
                     }
                 }
 
@@ -217,14 +221,48 @@ namespace Data.HashFunction.Core.LibraryLoader
 
             protected override void FreeLibrary(IntPtr libraryHandle)
             {
-                Libdl.dlclose(libraryHandle);
+                Libdl.dlclose_linux(libraryHandle);
             }
 
             public override IntPtr LoadFunction(string functionName)
             {
-                return Libdl.dlsym(libraryHandle, functionName);
+                return Libdl.dlsym_linux(libraryHandle, functionName);
             }
         }
-    }
+
+		private class OSXNativeLibrary : NativeLibraryLoader
+		{
+			public OSXNativeLibrary(string library) : base(library)
+			{
+			}
+
+			protected override IntPtr LoadLibrary(string libraryName)
+			{
+				Libdl.dlerror_osx();
+				IntPtr handle = Libdl.dlopen_osx(libraryName, Libdl.RTLD_NOW);
+				if (handle == IntPtr.Zero && !Path.IsPathRooted(libraryName))
+				{
+					string baseDir = AppContext.BaseDirectory;
+					if (!string.IsNullOrWhiteSpace(baseDir))
+					{
+						string localPath = Path.Combine(baseDir, libraryName);
+						handle = Libdl.dlopen_osx(localPath, Libdl.RTLD_NOW);
+					}
+				}
+
+				return handle;
+			}
+
+			protected override void FreeLibrary(IntPtr libraryHandle)
+			{
+				Libdl.dlclose_osx(libraryHandle);
+			}
+
+			public override IntPtr LoadFunction(string functionName)
+			{
+				return Libdl.dlsym_osx(libraryHandle, functionName);
+			}
+		}
+	}
 }
 

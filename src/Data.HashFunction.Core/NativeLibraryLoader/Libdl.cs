@@ -7,19 +7,32 @@ namespace Data.HashFunction.Core.LibraryLoader
 {
     internal static class Libdl
     {
-        [DllImport("libdl")]
-        public static extern IntPtr dlopen(string fileName, int flags);
+        [DllImport("libdl.so", EntryPoint = "dlopen")]
+        public static extern IntPtr dlopen_linux(string fileName, int flags);
 
-        [DllImport("libdl")]
-        public static extern IntPtr dlsym(IntPtr handle, string name);
+		[DllImport("libdl.so", EntryPoint = "dlsym")]
+		public static extern IntPtr dlsym_linux(IntPtr handle, string name);
 
-        [DllImport("libdl")]
-        public static extern int dlclose(IntPtr handle);
+		[DllImport("libdl.so", EntryPoint = "dlclose")]
+		public static extern int dlclose_linux(IntPtr handle);
 
-        [DllImport("libdl")]
-        public static extern string dlerror();
+		[DllImport("libdl.so", EntryPoint = "dlerror")]
+		public static extern string dlerror_linux();
 
-        public const int RTLD_NOW = 0x002;
+
+		[DllImport("libdl.dylib", EntryPoint = "dlopen")]
+		public static extern IntPtr dlopen_osx(string fileName, int flags);
+
+		[DllImport("libdl.dylib", EntryPoint = "dlsym")]
+		public static extern IntPtr dlsym_osx(IntPtr handle, string name);
+
+		[DllImport("libdl.dylib", EntryPoint = "dlclose")]
+		public static extern int dlclose_osx(IntPtr handle);
+
+		[DllImport("libdl.dylib", EntryPoint = "dlerror")]
+		public static extern string dlerror_osx();
+
+		public const int RTLD_NOW = 0x002;
     }
 }
 

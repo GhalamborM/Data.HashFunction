@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <Description>Data.HashFunction implementation of Fowler–Noll–Vo hash function (http://www.isthe.com/chongo/tech/comp/fnv/index.html) (http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function).</Description>
-    <Copyright>Copyright 2024</Copyright>
+    <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
     <AssemblyTitle>Data.HashFunction.FNV</AssemblyTitle>
     <VersionPrefix>3.1.1</VersionPrefix>
-    <Authors>Data.HashFunction Developers</Authors>
+    <Authors>Deskasoft International</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Data.HashFunction.FNV</AssemblyName>

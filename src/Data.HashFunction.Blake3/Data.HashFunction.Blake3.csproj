@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <Description>Data.HashFunction implementation of BLAKE3 hash (https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3).</Description>
-    <Copyright>Copyright 2024</Copyright>
+    <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
     <AssemblyTitle>Data.HashFunction.Blake3</AssemblyTitle>
     <VersionPrefix>3.1.1</VersionPrefix>
-    <Authors>Data.HashFunction Developers</Authors>
+    <Authors>Deskasoft International</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <TargetFramework>netstandard2.0</TargetFramework>

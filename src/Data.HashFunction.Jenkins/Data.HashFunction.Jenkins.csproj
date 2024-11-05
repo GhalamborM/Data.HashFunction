@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <Description>Data.HashFunction implementation of the Jenkins family of hash functions (http://en.wikipedia.org/wiki/Jenkins_hash_function).  Note:  SpookyHash can be found in the Data.HashFunction.SpookyHash package.</Description>
-    <Copyright>Copyright 2024</Copyright>
+    <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
     <AssemblyTitle>Data.HashFunction.Jenkins</AssemblyTitle>
     <VersionPrefix>3.1.1</VersionPrefix>
-    <Authors>Data.HashFunction Developers</Authors>
+    <Authors>Deskasoft International</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Data.HashFunction.Jenkins</AssemblyName>

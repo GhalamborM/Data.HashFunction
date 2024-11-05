@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <Description>Test suite for Data.HashFunction implementations.</Description>
-    <Copyright>Copyright 2024</Copyright>
+    <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
     <AssemblyTitle>Data.HashFunction.Test</AssemblyTitle>
     <VersionPrefix>3.1.1</VersionPrefix>
-    <Authors>Data.HashFunction Developers</Authors>
+    <Authors>Deskasoft International</Authors>
     <TargetFramework>net6.0</TargetFramework>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <AssemblyName>Data.HashFunction.Test</AssemblyName>
