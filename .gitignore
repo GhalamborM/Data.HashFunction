@@ -14,9 +14,6 @@ TestResults
 *.sln.docstates
 .vs/
 
-# Doxygen specific files
-*.doxygen
-
 # Build results
 [Dd]ebug/
 [Rr]elease/
