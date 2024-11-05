@@ -13,6 +13,9 @@ All functionality of the library is tested using [xUnit](https://github.com/xuni
 
 All code within the libarary is commented using Visual Studio-compatible XML comments.
 
+## Documentation Page
+The new documentation page is available at [https://deskasoft.dev/projects/data.hashfunction/](https://deskasoft.dev/projects/data.hashfunction/).
+
 Status
 ------
 
