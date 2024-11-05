@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Data.HashFunction.Core.LibraryLoader
 {
-    internal static class OperatingSystemHelper
+    public static class OperatingSystemHelper
     {
         public static bool IsOSPlatform(PlatformType platform)
         {
@@ -87,7 +87,7 @@ namespace Data.HashFunction.Core.LibraryLoader
         /// <summary>
         /// Specifies the platform type.
         /// </summary>
-        internal enum PlatformType
+        public enum PlatformType
         {
             /// <summary>
             /// Undefined platform.

@@ -71,7 +71,15 @@ namespace Data.HashFunction.Blake3
 		private static NativeLibraryLoader lib_loader;
 		static Hasher()
 		{
-			lib_loader = NativeLibraryLoader.Load("blake3_dotnet");
+			OperatingSystemHelper.PlatformType pType = OperatingSystemHelper.GetCurrentPlatfom();
+
+			if (pType == OperatingSystemHelper.PlatformType.Undefined)
+				throw new PlatformNotSupportedException("Blake3 modules are not available for this operating system.");
+
+			if (pType == OperatingSystemHelper.PlatformType.Windows)
+				lib_loader = NativeLibraryLoader.Load("blake3_dotnet");
+			else
+				lib_loader = NativeLibraryLoader.Load("libblake3_dotnet");
 
 			lib_loader.LoadFunction<blake3_new_del>("blake3_new", out blake3_new);
 			lib_loader.LoadFunction<blake3_new_keyed_del>("blake3_new_keyed", out blake3_new_keyed);

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -14,13 +15,13 @@ namespace Data.HashFunction.Core.LibraryLoader
         protected readonly string libraryName;
         protected readonly IntPtr libraryHandle;
 
-		/// <summary>
-		/// Initializes a new instance of <see cref="NativeLibraryLoader"/> for use with the given library name/path. This will automatically load the given library correctly for the current running operating system and architecture.
-		/// </summary>
-		/// <param name="library">The name/path of the library to be loaded.</param>
-		/// <exception cref="ArgumentNullException">Thrown when the given parameter is null.</exception>
-		/// <exception cref="FileLoadException">Thrown when the given library could not be loaded either because it is not found or invalid for the current operating system and architecture.</exception>
-		public NativeLibraryLoader(string library)
+        /// <summary>
+        /// Initializes a new instance of <see cref="NativeLibraryLoader"/> for use with the given library name/path. This will automatically load the given library correctly for the current running operating system and architecture.
+        /// </summary>
+        /// <param name="library">The name/path of the library to be loaded.</param>
+        /// <exception cref="ArgumentNullException">Thrown when the given parameter is null.</exception>
+        /// <exception cref="FileLoadException">Thrown when the given library could not be loaded either because it is not found or invalid for the current operating system and architecture.</exception>
+        public NativeLibraryLoader(string library)
         {
             _ = library ?? throw new ArgumentNullException(nameof(library));
 
@@ -29,79 +30,91 @@ namespace Data.HashFunction.Core.LibraryLoader
             {
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
-					library += ".dll";
+                    library += ".dll";
                 }
                 else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
-					library += ".so";
-				}
+                    library += ".so";
+                }
                 else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                 {
-					library += ".dylib";
-				}
+                    library += ".dylib";
+                }
             }
 
-			this.libraryName = library;
-            libraryHandle = LoadLibrary(this.libraryName);
+            if (!Path.IsPathRooted(library))
+            {
+                library = Path.Combine(AppContext.BaseDirectory, library);
+            }
+
+            this.libraryName = library;
+
+            List<string> searchPaths = new List<string>()
+            {
+                this.libraryName,
+                Path.Combine(Path.GetDirectoryName(this.libraryName), "runtimes", Path.GetFileName(this.libraryName)),
+
+            };
+
+            string fn = "";
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                fn = "win";
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                fn = "linux";
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                fn = "osx";
+            }
+
+            if (RuntimeInformation.ProcessArchitecture == Architecture.X86)
+            {
+                fn += "-x86";
+            }
+            else if (RuntimeInformation.ProcessArchitecture == Architecture.X64)
+            {
+                fn += "-x64";
+            }
+            else if (RuntimeInformation.ProcessArchitecture == Architecture.Arm)
+            {
+                fn += "-arm";
+            }
+            else if (RuntimeInformation.ProcessArchitecture == Architecture.Arm64)
+            {
+                fn += "-arm64";
+            }
+
+            string p = Path.Combine(Path.GetDirectoryName(this.libraryName), "runtimes", fn, Path.GetFileName(this.libraryName));
+            searchPaths.Add(p);
+
+            p = Path.Combine(Path.GetDirectoryName(this.libraryName), "runtimes", fn, "native", Path.GetFileName(this.libraryName));
+            searchPaths.Add(p);
+
+            foreach (string searchPath in searchPaths)
+            {
+				libraryHandle = LoadLibrary(searchPath);
+                if (libraryHandle != IntPtr.Zero)
+                    break;
+            }
 
             if (libraryHandle == IntPtr.Zero)
             {
-                string p = Path.Combine(Path.GetDirectoryName(this.libraryName), "runtimes", Path.GetFileName(this.libraryName));
-				libraryHandle = LoadLibrary(p);
+                string err = GetError();
+                if (string.IsNullOrEmpty(err))
+                    throw new FileLoadException("Could not load " + searchPaths[searchPaths.Count - 1]);
+                else
+                    throw new FileLoadException("Could not load " + searchPaths[searchPaths.Count - 1] + ": " + err);
 			}
-
-			if (libraryHandle == IntPtr.Zero)
-			{
-                string fn = "";
-
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    fn = "win";
-                }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                {
-					fn = "linux";
-				}
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                {
-					fn = "osx";
-				}
-
-				if (RuntimeInformation.ProcessArchitecture == Architecture.X86)
-                {
-                    fn += "-x86";
-                }
-                else if (RuntimeInformation.ProcessArchitecture == Architecture.X64)
-				{
-					fn += "-x64";
-				}
-				else if (RuntimeInformation.ProcessArchitecture == Architecture.Arm)
-				{
-					fn += "-arm";
-				}
-				else if (RuntimeInformation.ProcessArchitecture == Architecture.Arm64)
-				{
-					fn += "-arm64";
-				}
-
-				string p = Path.Combine(Path.GetDirectoryName(this.libraryName), "runtimes", fn, Path.GetFileName(this.libraryName));
-				libraryHandle = LoadLibrary(p);
-
-				if (libraryHandle == IntPtr.Zero)
-                {
-					p = Path.Combine(Path.GetDirectoryName(this.libraryName), "runtimes", fn, "native", Path.GetFileName(this.libraryName));
-					libraryHandle = LoadLibrary(p);
-				}
-			}
-
-			if (libraryHandle == IntPtr.Zero)
-            {
-                throw new FileLoadException("Could not load " + libraryName);
-            }
         }
 
         protected abstract IntPtr LoadLibrary(string libraryName);
         protected abstract void FreeLibrary(IntPtr libraryHandle);
+
+        protected abstract string GetError();
 
         /// <summary>
         /// Tries to load a function with the given name.
@@ -194,7 +207,12 @@ namespace Data.HashFunction.Core.LibraryLoader
             {
                 return Kernel32.GetProcAddress(libraryHandle, functionName);
             }
-        }
+
+			protected override string GetError()
+			{
+				return Marshal.GetLastWin32Error().ToString();
+			}
+		}
 
         private class LinuxNativeLibrary : NativeLibraryLoader
 		{
@@ -204,7 +222,6 @@ namespace Data.HashFunction.Core.LibraryLoader
 
             protected override IntPtr LoadLibrary(string libraryName)
             {
-                Libdl.dlerror_linux();
                 IntPtr handle = Libdl.dlopen_linux(libraryName, Libdl.RTLD_NOW);
                 if (handle == IntPtr.Zero && !Path.IsPathRooted(libraryName))
                 {
@@ -228,7 +245,12 @@ namespace Data.HashFunction.Core.LibraryLoader
             {
                 return Libdl.dlsym_linux(libraryHandle, functionName);
             }
-        }
+
+			protected override string GetError()
+			{
+                return Libdl.DLError();
+			}
+		}
 
 		private class OSXNativeLibrary : NativeLibraryLoader
 		{
@@ -238,7 +260,6 @@ namespace Data.HashFunction.Core.LibraryLoader
 
 			protected override IntPtr LoadLibrary(string libraryName)
 			{
-				Libdl.dlerror_osx();
 				IntPtr handle = Libdl.dlopen_osx(libraryName, Libdl.RTLD_NOW);
 				if (handle == IntPtr.Zero && !Path.IsPathRooted(libraryName))
 				{
@@ -261,6 +282,11 @@ namespace Data.HashFunction.Core.LibraryLoader
 			public override IntPtr LoadFunction(string functionName)
 			{
 				return Libdl.dlsym_osx(libraryHandle, functionName);
+			}
+
+			protected override string GetError()
+			{
+				return Libdl.DLError();
 			}
 		}
 	}
