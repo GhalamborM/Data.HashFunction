@@ -1,8 +1,10 @@
+<img src="https://github.com/user-attachments/assets/fc94c7e0-96c6-4dfd-a728-0fd15656b5a4">
+
 Data.HashFunction ![License](https://img.shields.io/github/license/brandondahler/Data.HashFunction.svg)
 =================
 
-**This project was originally maintained at [brandondahler/Data.HashFunction](https://github.com/brandondahler/Data.HashFunction) before 05/11/2022 (PT). It is now maintained by Deskasoft International.**
-Join our Discord at https://discord.gg/deskasoft to discuss about our projects.
+**This project was originally maintained at [brandondahler/Data.HashFunction](https://github.com/brandondahler/Data.HashFunction) before 05/11/2022 (PT). It is maintained by Deskasoft International since then.**
+Join our Discord at https://discord.gg/PrKery9 to discuss about our projects.
 
 Data.HashFunction is a C# library to create a common interface to [non-cryptographic hash functions](http://en.wikipedia.org/wiki/List_of_hash_functions#Non-cryptographic_hash_functions) and provide implementations of public hash functions.  It is licensed under the permissive and OSI approved [MIT](http://opensource.org/licenses/MIT) license.
 
@@ -11,34 +13,41 @@ All functionality of the library is tested using [xUnit](https://github.com/xuni
 
 All code within the libarary is commented using Visual Studio-compatible XML comments.
 
+## Documentation Page
+The new documentation page is available at [https://deskasoft.dev/projects/data.hashfunction/](https://deskasoft.dev/projects/data.hashfunction/).
+
 Status
 ------
 
 ### Master
 
-[![Build Status](https://img.shields.io/appveyor/ci/brandondahler/data-hashfunction/master.svg)](https://ci.appveyor.com/project/brandondahler/data-hashfunction)
-[![Test Status](https://img.shields.io/appveyor/tests/brandondahler/data-hashfunction/master.svg)](https://ci.appveyor.com/project/brandondahler/data-hashfunction/build/tests)
+[![Build Status](https://img.shields.io/appveyor/ci/LordOfXen/data-hashfunction/master.svg)](https://ci.appveyor.com/project/LordOfXen/data-hashfunction)
 
 
 ### NuGet
 
 | Name                            | Normal                                                                                                                                                                 |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Data.HashFunction.Interfaces    | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.Interfaces.svg)](https://www.nuget.org/packages/System.Data.HashFunction.Interfaces/)       | 
-| Data.HashFunction.Core          | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.Core.svg)](https://www.nuget.org/packages/System.Data.HashFunction.Core/)                   |
-| Data.HashFunction.BernsteinHash | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.BernsteinHash.svg)](https://www.nuget.org/packages/System.Data.HashFunction.BernsteinHash/) |
-| Data.HashFunction.Blake2        | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.Blake2.svg)](https://www.nuget.org/packages/System.Data.HashFunction.Blake2/)               |
-| Data.HashFunction.Buzhash       | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.Buzhash.svg)](https://www.nuget.org/packages/System.Data.HashFunction.Buzhash/)             |
-| Data.HashFunction.CityHash      | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.CityHash.svg)](https://www.nuget.org/packages/System.Data.HashFunction.CityHash/)           |
-| Data.HashFunction.CRC           | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.CRC.svg)](https://www.nuget.org/packages/System.Data.HashFunction.CRC/)                     |
-| Data.HashFunction.ELF64         | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.ELF64.svg)](https://www.nuget.org/packages/System.Data.HashFunction.ELF64/)                 |
-| Data.HashFunction.FNV           | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.FNV.svg)](https://www.nuget.org/packages/System.Data.HashFunction.FNV/)                     |
-| Data.HashFunction.HashAlgorithm | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.HashAlgorithm.svg)](https://www.nuget.org/packages/System.Data.HashFunction.HashAlgorithm/) |
-| Data.HashFunction.Jenkins       | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.Jenkins.svg)](https://www.nuget.org/packages/System.Data.HashFunction.Jenkins/)             |
-| Data.HashFunction.MurmurHash    | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.MurmurHash.svg)](https://www.nuget.org/packages/System.Data.HashFunction.MurmurHash/)       |
-| Data.HashFunction.Pearson       | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.Pearson.svg)](https://www.nuget.org/packages/System.Data.HashFunction.Pearson/)             |
-| Data.HashFunction.SpookyHash    | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.SpookyHash.svg)](https://www.nuget.org/packages/System.Data.HashFunction.SpookyHash/)       |
-| Data.HashFunction.xxHash        | [![Version Status](https://img.shields.io/nuget/v/System.Data.HashFunction.xxHash.svg)](https://www.nuget.org/packages/System.Data.HashFunction.xxHash/)               |
+| Data.HashFunction.BernsteinHash | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.BernsteinHash.svg)](https://www.nuget.org/packages/Data.HashFunction.BernsteinHash/) |
+| Data.HashFunction.Blake2        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Blake2.svg)](https://www.nuget.org/packages/Data.HashFunction.Blake2/)               |
+| Data.HashFunction.Blake3        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Blake3.svg)](https://www.nuget.org/packages/Data.HashFunction.Blake3/)               |
+| Data.HashFunction.BuzHash       | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Buzhash.svg)](https://www.nuget.org/packages/Data.HashFunction.Buzhash/)             |
+| Data.HashFunction.CityHash      | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.CityHash.svg)](https://www.nuget.org/packages/Data.HashFunction.CityHash/)           |
+| Data.HashFunction.CRC           | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.CRC.svg)](https://www.nuget.org/packages/Data.HashFunction.CRC/)                     |
+| Data.HashFunction.ELF64         | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.ELF64.svg)](https://www.nuget.org/packages/Data.HashFunction.ELF64/)                 |
+| Data.HashFunction.FNV           | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.FNV.svg)](https://www.nuget.org/packages/Data.HashFunction.FNV/)                     |
+| Data.HashFunction.HashAlgorithm | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.HashAlgorithm.svg)](https://www.nuget.org/packages/Data.HashFunction.HashAlgorithm/) |
+| Data.HashFunction.Jenkins       | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Jenkins.svg)](https://www.nuget.org/packages/Data.HashFunction.Jenkins/)             |
+| Data.HashFunction.MurmurHash    | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.MurmurHash.svg)](https://www.nuget.org/packages/Data.HashFunction.MurmurHash/)       |
+| Data.HashFunction.Pearson       | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.Pearson.svg)](https://www.nuget.org/packages/Data.HashFunction.Pearson/)             |
+| Data.HashFunction.SpookyHash    | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.SpookyHash.svg)](https://www.nuget.org/packages/Data.HashFunction.SpookyHash/)       |
+| Data.HashFunction.xxHash        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.xxHash.svg)](https://www.nuget.org/packages/Data.HashFunction.xxHash/)               |
+
+There is also a nuget package referencing all available hash functions, which you can find below. Use this to easily bind all hash functions to your project.
+
+| Name                            | Normal                                                                                                                                                                 |
+|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data.HashFunction        | [![Version Status](https://img.shields.io/nuget/v/Data.HashFunction.svg)](https://www.nuget.org/packages/Data.HashFunction/)               |
 
 Implementations
 ---------------
@@ -51,7 +60,9 @@ The following hash functions have been implemented from the most reliable refere
   * BernsteinHash - Original
   * ModifiedBernsteinHash - Minor update that is said to result in better distribution
 * [Blake2](https://blake2.net/)
-  * Blake2b 
+  * Blake2b
+* [Blake3](https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3)
+  * Blake3 (through https://github.com/xoofx/Blake3.NET - does not require the mentioned project)
 * [BuzHash](http://www.serve.net/buz/hash.adt/java.002.html)
   * BuzHashBase - Abstract implementation, there is no authoritative implementation
   * DefaultBuzHash - Concrete implementation, uses 256 random 64-bit integers
@@ -116,7 +127,25 @@ public class Program
 
 Release Notes
 -------------
-See [Release Notes](https://github.com/brandondahler/Data.HashFunction/wiki/Release-Notes) wiki page.
+See [Release Notes](https://github.com/Deskasoft/Data.HashFunction/wiki/Release-Notes) wiki page.
+
+## Versioning Guarantees
+
+This library generally abides by [Semantic Versioning](https://semver.org). Packages are published in `MAJOR.MINOR.PATCH` version format.
+
+### Patch component
+
+An increment of the **PATCH** component always indicates that an internal-only change was made, generally a bug fix. These changes will not affect the public-facing API in any way, and are always guaranteed to be forward/backwards-compatible with your codebase, any pre-compiled dependencies of your codebase.
+
+### Minor component
+
+An increment of the **MINOR** component indicates that some addition was made to the library,
+and this addition **may not be** backwards-compatible with prior versions.
+
+### Major component
+
+An increment of the **MAJOR** component indicates that breaking changes have been made to the library;
+**consumers should check the release notes to determine what changes need to be made.**
 
 
 Contributing
@@ -133,4 +162,4 @@ Code contributions should follow existing code's methodologies and style, along 
 License
 -------
 
-Data.HashFunction is released under the terms of the MIT license. See [LICENSE](https://github.com/brandondahler/Data.HashFunction/blob/master/LICENSE) for more information or see http://opensource.org/licenses/MIT.
+Data.HashFunction is released under the terms of the MIT license. See [LICENSE](https://github.com/deskasoft/Data.HashFunction/blob/master/LICENSE) for more information or see http://opensource.org/licenses/MIT.

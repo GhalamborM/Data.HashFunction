@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Test suite for Data.HashFunction implementations.</Description>
+    <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
+    <AssemblyTitle>Data.HashFunction.Test</AssemblyTitle>
+    <VersionPrefix>3.1.2</VersionPrefix>
+    <Authors>Deskasoft International</Authors>
+    <TargetFramework>net6.0</TargetFramework>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <AssemblyName>Data.HashFunction.Test</AssemblyName>
+    <AssemblyOriginatorKeyFile>../Data.HashFunction.Production.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>Data.HashFunction.Test</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>$(SolutionDir)\packages\</PackageOutputPath>
+    <Product>$(AssemblyTitle)</Product>
+    <PackageIcon>data_hashfunction_logo.png</PackageIcon>
+    <PackageProjectUrl>https://deskasoft.dev/projects/data.hashfunction/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="results.xml" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs" Link="Properties\SolutionInfo.cs" />
+    <None Include="App.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\data_hashfunction_logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data.HashFunction.BernsteinHash\Data.HashFunction.BernsteinHash.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.Blake2\Data.HashFunction.Blake2.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.Blake3\Data.HashFunction.Blake3.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.BuzHash\Data.HashFunction.BuzHash.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.CityHash\Data.HashFunction.CityHash.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.Core\Data.HashFunction.Core.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.CRC\Data.HashFunction.CRC.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.ELF64\Data.HashFunction.ELF64.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.FarmHash\Data.HashFunction.FarmHash.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.FNV\Data.HashFunction.FNV.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.Interfaces\Data.HashFunction.Interfaces.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.HashAlgorithm\Data.HashFunction.HashAlgorithm.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.Jenkins\Data.HashFunction.Jenkins.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.MetroHash\Data.HashFunction.MetroHash.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.MurmurHash\Data.HashFunction.MurmurHash.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.Pearson\Data.HashFunction.Pearson.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.SpookyHash\Data.HashFunction.SpookyHash.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.xxHash\Data.HashFunction.xxHash.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />
+    <PackageReference Include="morelinq" Version="2.10.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
+    <PackageReference Include="Microsoft.CodeCoverage" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="OpenCover" Version="4.6.519" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

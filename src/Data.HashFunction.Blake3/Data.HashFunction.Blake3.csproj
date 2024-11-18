@@ -1,0 +1,108 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Data.HashFunction implementation of BLAKE3 hash (https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3).</Description>
+    <Copyright>© 2024, Deskasoft International. All rights reserved.</Copyright>
+    <AssemblyTitle>Data.HashFunction.Blake3</AssemblyTitle>
+    <VersionPrefix>3.1.2</VersionPrefix>
+    <Authors>Deskasoft International</Authors>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyOriginatorKeyFile>../Data.HashFunction.Production.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>Data.HashFunction.Blake3</PackageId>
+    <PackageTags>BLAKE;BLAKE3;hash;function</PackageTags>
+    <PackageReleaseNotes>https://github.com/Deskasoft/Data.HashFunction/wiki/Release-Notes</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Deskasoft/Data.HashFunction</RepositoryUrl>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>$(SolutionDir)\packages\</PackageOutputPath>
+    <Product>$(AssemblyTitle)</Product>
+    <PackageIcon>data_hashfunction_logo.png</PackageIcon>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PackageProjectUrl>https://deskasoft.dev/projects/data.hashfunction/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\FriendAssemblies.cs" Link="Properties\FriendAssemblies.cs" />
+    <Compile Include="..\SolutionInfo.cs" Link="Properties\SolutionInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Link="LICENSE">
+      <PackagePath></PackagePath>
+      <Pack>true</Pack>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\data_hashfunction_logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".\runtimes\linux-arm\native\libblake3_dotnet.so">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/linux-arm/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include=".\runtimes\linux-arm64\native\libblake3_dotnet.so">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/linux-arm64/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include=".\runtimes\linux-x64\native\libblake3_dotnet.so">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/linux-x64/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+
+    <None Include=".\runtimes\osx-arm64\native\libblake3_dotnet.dylib">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/osx-arm64/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include=".\runtimes\osx-x64\native\libblake3_dotnet.dylib">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/osx-x64/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+
+    <None Include=".\runtimes\win-arm64\native\blake3_dotnet.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-arm64/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include=".\runtimes\win-x64\native\blake3_dotnet.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include=".\runtimes\win-x86\native\blake3_dotnet.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x86/native</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data.HashFunction.Core\Data.HashFunction.Core.csproj" />
+    <ProjectReference Include="..\Data.HashFunction.Interfaces\Data.HashFunction.Interfaces.csproj" />
+  </ItemGroup>
+  
+
+  <ItemGroup>
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+  </ItemGroup>
+
+</Project>
